@@ -1,0 +1,93 @@
+package tutorial2q1;
+
+//owner KhairolHazeeq
+
+class HW<T,U>{
+    private T t;
+    private U u;
+
+    public HW(T t,U u) {
+        this.t = t;
+        this.u = u;
+       
+    }
+
+    public T getT() {
+        return t;
+    }
+
+    public void setT(T t) {
+        this.t = t;
+    }
+
+    public U getU() {
+        return u;
+    }
+
+    public void setU(U u) {
+        this.u = u;
+    }
+    
+
+  
+    public T compare(T t,U u){
+        System.out.println("The parameters value are : "+t+" and "+u);
+        
+        //CHECK INTEGER
+        if (t.getClass() == Integer.class) {
+        // With auto-boxing / unboxing
+        System.out.print("The sum of the integer is ");
+       
+        return (T) (Integer) ((Integer) t + (Integer) u);
+    }
+        //CHECK DOUBLE
+        if (t.getClass() == Double.class) {
+        // With auto-boxing / unboxing
+            System.out.print("The sum of the double is ");
+        return (T) (Double) ((Double) t + (Double) u);
+    }
+        //CHECK STRING
+        if (t.getClass() == String.class) {
+        // With auto-boxing / unboxing
+                if(t.equals(u)){
+            System.out.println("The string is  equal");
+            
+        }       else if(!t.equals(u)){
+            System.out.println("The string is not equal");
+            
+        }
+            
+        return (T) (String) ((String) t + (String) u);
+    }
+
+
+
+        return null;
+    }
+}
+
+
+public class Tutorial2Q1 {
+
+
+    public static void main(String[] args) {
+
+        HW<String,String> s1=new HW<>("ManUtd","Real Madrid");
+        s1.compare("ManUtd","Real Madrid");
+        
+        
+        HW<Double,Double> i2=new HW<>(31.3,21.7);
+        System.out.print(i2.compare(31.3,21.7)); 
+        System.out.println("");
+        
+        HW<Integer,Integer> i1=new HW<>(31,21);
+        System.out.print(i1.compare(31, 21)); 
+        System.out.println("");
+       
+       
+        HW<String,String> s2=new HW<>("Real Madrid","Real Madrid");
+        s2.compare("Real Madrid","Real Madrid");
+
+    }
+    
+}
