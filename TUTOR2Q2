@@ -1,0 +1,66 @@
+package tutorial2q2;
+//owner KhairolHazeeq
+class SpecialEncoding<T>{
+    private T[] t;
+
+    public SpecialEncoding(T[] t) {
+        this.t = t;
+    }
+
+    public T[] getT() {
+        return t;
+    }
+
+    public void setT(T[] t) {
+        this.t = t;
+    }
+
+    @Override
+    public String toString() {
+        int i=0;
+        String mog="The Command is ";
+        String mad="The Code is ";
+        while(i<t.length){
+            mad+=t[i]+" ";
+        if(t[i].equals('P') || t[i].equals(3)){
+            mog+="Print ";
+        }
+        if(t[i].equals('I') || t[i].equals(2)){
+            mog+="Insert ";
+        }
+        if(t[i].equals('V') || t[i].equals(5)){
+            mog+="Paste ";
+        }
+        if(t[i].equals('C') || t[i].equals(0)){
+            mog+="Copy ";
+        }
+        if(t[i].equals('D') || t[i].equals(1)){
+            mog+="Delete ";
+        }
+        i++;
+        }
+        return mad+"\n"+mog;
+    }
+
+  
+    
+    
+}
+public class Tutorial2Q2 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+        Integer[] num={3,2,5,0,1};
+        Character[] letter ={'P','I','V','C','D'};
+        SpecialEncoding<Integer> a=new SpecialEncoding<>(num);
+        SpecialEncoding<Character> b=new SpecialEncoding<>(letter);
+        System.out.println(a.toString());
+        System.out.println(b.toString());
+        
+    }
+    
+}
